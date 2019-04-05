@@ -26,6 +26,7 @@
     "@leizm/web": "^2.6.0",
     "autocannon": "^3.2.0",
     "autocannon-compare": "^0.3.0",
+    "body-parser": "^1.18.3",
     "chalk": "^2.4.2",
     "cli-table": "^0.3.1",
     "commander": "^2.19.0",
