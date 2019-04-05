@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+const duration = +process.argv[2]
+const frameworks = process.argv.slice(3)
+
+require('../lib/bench')(
+  {
+    all: false,
+    connections: 1000,
+    pipelining: 10,
+    duration,
+
+    // make sure that no caching is happening, since it isn't particularly
+    // likely for that to work in a high volume environment
+    idReplacement: true,
+
+    method: 'POST',
+    url: 'http://localhost:3000/hello?a=b&c=d',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: '{"name":"[<id>]"}',
+  },
+  frameworks,
+)
