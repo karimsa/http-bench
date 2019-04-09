@@ -29,7 +29,7 @@ const transforms = {
       kind: 'const',
     })
     path.parentPath.replaceWithSourceString(g`
-      ${qs}.parse(${reqId}.parsedUrl)
+      ${qs}.parse(${reqId}.parsedUrl.query)
     `)
   },
 
