@@ -59,3 +59,4 @@ package-lock.json
 results
 benchmarks/express-compiled.js
 dist
+benchmarks/express-minified.js
