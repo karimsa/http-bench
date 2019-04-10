@@ -15,7 +15,7 @@ while test "$#" -gt "0"; do
   echo -en "$1 " >> "$tmp"
   echo -en "$(cat $f | jq .latency.average) " >> "$tmp"
   echo -en "$(cat $f | jq .latency.stddev) " >> "$tmp"
-  echo -en "$(cat $f | jq .requests.average | cut -d. -f1) " >> "$tmp"
+  echo -en "~$(cat $f | jq '.requests.average / 1000' | cut -d. -f1)000 " >> "$tmp"
   echo -en "$(cat $f | jq .errors) " >> "$tmp"
   echo -en "$(cat $f | jq .non2xx) " >> "$tmp"
   echo -en "$(BENCH_START=true "$(dirname $0)/bench-boot" 10 "node benchmarks/$1")" >> "$tmp"
@@ -29,3 +29,5 @@ cat "$tmp" | column -t > "$tmp.2"
 cat "$tmp.2" | head -n 1
 cat "$tmp.2" | head -n 1 | sed -E 's/./-/g'
 cat "$tmp.2" | tail -n +2 | sort -r -n -k 3
+
+echo ""
