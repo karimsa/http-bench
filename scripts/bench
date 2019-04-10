@@ -18,7 +18,7 @@ while test "$#" -gt "0"; do
   echo -en "$(cat $f | jq .requests.average | cut -d. -f1) " >> "$tmp"
   echo -en "$(cat $f | jq .errors) " >> "$tmp"
   echo -en "$(cat $f | jq .non2xx) " >> "$tmp"
-  echo -en "$(BENCH_START=true "$(dirname $0)/bench-boot" 5 "node benchmarks/$1")" >> "$tmp"
+  echo -en "$(BENCH_START=true "$(dirname $0)/bench-boot" 10 "node benchmarks/$1")" >> "$tmp"
   echo "" >> $tmp
 
   shift
