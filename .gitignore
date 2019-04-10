@@ -59,4 +59,5 @@ package-lock.json
 results
 benchmarks/express-compiled.js
 dist
+scripts/bench-boot
 benchmarks/express-minified.js
