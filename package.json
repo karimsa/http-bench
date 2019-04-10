@@ -4,6 +4,8 @@
   "description": "Benchmarks for Fastify, a fast and low-overhead web framework.",
   "main": "index.js",
   "scripts": {
+    "before": "./scripts/bench 5 express express-minified bare",
+    "after": "./scripts/bench 5 express express-compiled express-minified bare",
     "build": "babel src/express.js -o benchmarks/express-compiled.js && npm run build:min",
     "build:min": "./scripts/minify.sh",
     "start": "node benchmark.js",
