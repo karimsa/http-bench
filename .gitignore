@@ -57,7 +57,7 @@ package-lock.json
 
 # benchmark results
 results
-benchmarks/express-compiled.js
+benchmarks/express-macros.js
 dist
 scripts/bench-boot
 benchmarks/express-minified.js
