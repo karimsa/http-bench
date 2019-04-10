@@ -60,4 +60,5 @@ results
 benchmarks/express-macros.js
 dist
 scripts/bench-boot
+benchmarks/express-minified.bundle.js
 benchmarks/express-minified.js
